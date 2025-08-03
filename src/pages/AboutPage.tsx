@@ -104,46 +104,6 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Genres */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Genres I Explore
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="border border-gray-200 dark:border-gray-600 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Fantasy & Magical Realism</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Stories that blend the magical with the mundane, exploring what happens when the extraordinary 
-                    intrudes upon ordinary life.
-                  </p>
-                </div>
-                
-                <div className="border border-gray-200 dark:border-gray-600 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Science Fiction</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Explorations of technology's impact on humanity, often focusing on the ethical and 
-                    emotional implications of scientific advancement.
-                  </p>
-                </div>
-                
-                <div className="border border-gray-200 dark:border-gray-600 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Literary Fiction</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Character-driven stories that examine the complexities of human relationships and 
-                    the small moments that shape our lives.
-                  </p>
-                </div>
-                
-                <div className="border border-gray-200 dark:border-gray-600 rounded-xl p-6">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Humor & Essays</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Lighthearted observations about modern life, particularly the absurdities of working 
-                    in technology and creative industries.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
