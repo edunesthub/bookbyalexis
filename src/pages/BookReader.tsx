@@ -157,9 +157,10 @@ const BookReader: React.FC = () => {
               Previous Chapter
             </button>
             
-            <span className="text-gray-600 dark:text-gray-400 font-medium">
-              {currentChapter + 1} / {chapters.length}
-            </span>
+            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium text-center min-w-[60px]">
+  {currentChapter + 1} / {chapters.length}
+</span>
+
             
             <button
               onClick={() => setCurrentChapter(Math.min(chapters.length - 1, currentChapter + 1))}
