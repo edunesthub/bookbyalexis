@@ -25,24 +25,20 @@ const AboutPage: React.FC = () => {
                 </h2>
                 <div className="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
                   <p>
-                    I've been a storyteller for as long as I can remember. What started as scribbled tales 
-                    in elementary school notebooks has evolved into a passion for crafting immersive worlds 
-                    and exploring the depths of human experience through fiction.
+                    My name is Alex Osam Kakra. I’m an educator, speaker, and inspirational writer with a deep passion for guiding young people through the different seasons of life. With a background in Mathematics Education from the University of Education, Ghana, and further studies in Austria and Germany, I bring a balance of intellectual depth and spiritual insight to my work.
                   </p>
                   <p>
-                    My work spans multiple genres, but at the heart of every story is a fundamental belief 
-                    in the power of narrative to connect us. Whether I'm writing about mystical gardens, 
-                    futuristic societies, or the simple moments that define our lives, I'm always searching 
-                    for the universal truths that bind us together.
+                    Writing, for me, has always been about purpose. Through books like <strong>Loyalty and Disloyalty</strong> and <strong>The Book of Remembrance</strong>, I’ve tried to speak to the heart—offering wisdom, encouragement, and guidance for anyone walking through life’s complexities.
                   </p>
                   <p>
-                    This website represents my commitment to making literature accessible to everyone. 
-                    In a world where books can be expensive and availability limited, I want to remove 
-                    those barriers and share my stories freely with anyone who wants to read them.
+                    My latest book, <strong>Sunrise, Sunshine, Sunset</strong>, is perhaps my most poetic and personal message yet. It’s a reflection on life as a journey of light, where each season carries meaning. From the fresh hope of sunrise to the fullness of sunshine and the quiet wisdom of sunset, every phase of life has something sacred to offer.
+                  </p>
+                  <p>
+                    I write to inspire and to remind others that their journey matters. If something I’ve written brings clarity, comfort, or courage to even one person, then it’s worth it.
                   </p>
                 </div>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-6">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
@@ -77,33 +73,34 @@ const AboutPage: React.FC = () => {
                   <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full w-fit mx-auto mb-4">
                     <Heart className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Connection</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Guidance</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Stories have the power to bridge gaps between people, cultures, and experiences.
+                    I write to help others navigate the changing seasons of life and find clarity when it’s needed most.
                   </p>
                 </div>
-                
+
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 text-center">
                   <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-full w-fit mx-auto mb-4">
                     <BookOpen className="h-6 w-6 text-green-600 dark:text-green-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Accessibility</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Purpose</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Great literature should be available to everyone, regardless of economic circumstances.
+                    Every story I write is rooted in the belief that words can heal, teach, and uplift.
                   </p>
                 </div>
-                
+
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 text-center">
                   <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-full w-fit mx-auto mb-4">
                     <Coffee className="h-6 w-6 text-purple-600 dark:text-purple-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Joy</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Simplicity</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Reading should be a pleasure, an escape, and a source of wonder in our daily lives.
+                    I believe in writing that speaks simply and honestly, so that everyone can feel seen and understood.
                   </p>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
