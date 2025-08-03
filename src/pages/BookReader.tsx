@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useSearchParams, Link } from 'react-router-dom';
+import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ChevronLeft, ChevronRight, Calendar, Tag, Bookmark, BookmarkCheck } from 'lucide-react';
 import booksData from '../data/books.json';
 import { useUserPreferences } from '../contexts/UserPreferencesContext';
@@ -7,23 +7,21 @@ import { useUserPreferences } from '../contexts/UserPreferencesContext';
 const BookReader: React.FC = () => {
   const { bookId } = useParams<{ bookId: string }>();
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const { updateLastReadChapter, isBookSaved, toggleSavedBook } = useUserPreferences();
-  
-  // Get initial chapter from URL params or default to 0
+
   const initialChapter = parseInt(searchParams.get('chapter') || '0', 10);
   const [currentChapter, setCurrentChapter] = useState(0);
-  
+
   const book = booksData.find(b => b.id === bookId);
   const saved = isBookSaved(bookId || '');
 
-  // Set initial chapter on mount
   useEffect(() => {
     setCurrentChapter(initialChapter);
   }, [initialChapter]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Update reading progress whenever chapter changes
     if (bookId) {
       updateLastReadChapter(bookId, currentChapter);
     }
@@ -36,13 +34,13 @@ const BookReader: React.FC = () => {
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Book not found
           </h1>
-          <Link
-            to="/books"
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Library
-          </Link>
+            Go Back
+          </button>
         </div>
       </div>
     );
@@ -51,27 +49,26 @@ const BookReader: React.FC = () => {
   const chapters = book.content.chapters;
   const currentChapterData = chapters[currentChapter];
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+  const formatDate = (dateString: string) =>
+    new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
-  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Header */}
       <div className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Link
-            to="/books"
+          <button
+            onClick={() => navigate(-1)}
             className="inline-flex items-center text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium mb-4 transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Library
-          </Link>
-          
+            Go Back
+          </button>
+
           <div className="flex flex-col md:flex-row md:items-start md:justify-between">
             <div>
               <div className="flex items-start justify-between mb-2">
@@ -102,8 +99,8 @@ const BookReader: React.FC = () => {
                 </p>
               )}
             </div>
-            
-            {/* Chapter Navigation */}
+
+            {/* Top Chapter Navigation */}
             {chapters.length > 1 && (
               <div className="flex items-center space-x-2 mt-4 md:mt-0">
                 <button
@@ -135,7 +132,6 @@ const BookReader: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             {currentChapterData.title}
           </h2>
-          
           <div className="text-gray-800 dark:text-gray-200 leading-relaxed text-lg space-y-6">
             {currentChapterData.content.split('\n\n').map((paragraph, index) => (
               <p key={index} className="text-justify">
@@ -145,29 +141,28 @@ const BookReader: React.FC = () => {
           </div>
         </article>
 
-        {/* Chapter Navigation Bottom */}
+        {/* Bottom Chapter Navigation */}
         {chapters.length > 1 && (
-          <div className="flex justify-between items-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex flex-wrap justify-between items-center gap-4 mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
             <button
               onClick={() => setCurrentChapter(Math.max(0, currentChapter - 1))}
               disabled={currentChapter === 0}
-              className="inline-flex items-center px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors font-medium"
+              className="flex items-center px-5 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors font-medium"
             >
               <ChevronLeft className="mr-2 h-5 w-5" />
-              Previous Chapter
+              Previous
             </button>
-            
-            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium text-center min-w-[60px]">
-  {currentChapter + 1} / {chapters.length}
-</span>
 
-            
+            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-medium text-center min-w-[80px]">
+              {currentChapter + 1} / {chapters.length}
+            </span>
+
             <button
               onClick={() => setCurrentChapter(Math.min(chapters.length - 1, currentChapter + 1))}
               disabled={currentChapter === chapters.length - 1}
-              className="inline-flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors font-medium"
+              className="flex items-center px-5 py-3 bg-amber-600 hover:bg-amber-700 text-white disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors font-medium"
             >
-              Next Chapter
+              Next
               <ChevronRight className="ml-2 h-5 w-5" />
             </button>
           </div>
