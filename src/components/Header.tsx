@@ -50,13 +50,18 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg group-hover:bg-amber-200 dark:group-hover:bg-amber-900/50 transition-colors">
-              <BookOpen className="h-6 w-6 text-amber-600 dark:text-amber-400" />
-            </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
-              Books by Alexis
-            </span>
-          </Link>
+  <div className="p-1">
+    <img
+      src="/pwa-icon-192.png"
+      alt="Books by Alexis"
+      className="h-8 w-8 object-contain rounded-md"
+    />
+  </div>
+  <span className="text-xl font-bold text-gray-900 dark:text-white">
+    Books by Alexis
+  </span>
+</Link>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
