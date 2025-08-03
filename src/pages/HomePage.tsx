@@ -43,17 +43,15 @@ const HomePage: React.FC = () => {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Welcome, Fellow Reader
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-                I'm an independent author who believes in the power of storytelling to connect us across distances and differences. 
-                My writing spans genres from mystical fantasy to thought-provoking science fiction, always with a focus on 
-                the human experience at the heart of every tale.
-              </p>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                This is my gift to the reading community—stories crafted with love and shared freely. 
-                I hope you find something here that resonates with you.
-              </p>
+  Welcome, Fellow Reader
+</h2>
+<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+  I’m an independent author who sees storytelling as a bridge—something that brings us closer no matter where we come from. My writing explores everything from quiet reflections to vivid imaginations, but at the core of every story is a piece of the human experience.
+</p>
+<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+  This space is my offering to the reading community—stories written with care and shared freely. I hope something here speaks to you, stays with you, and maybe even inspires you.
+</p>
+
               <Link
                 to="/about"
                 className="inline-flex items-center mt-6 text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-medium transition-colors"
