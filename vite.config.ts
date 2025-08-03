@@ -16,7 +16,7 @@ export default defineConfig({
       ],
       manifest: {
         name: 'Books by Alexis',
-        short_name: 'Books',
+        short_name: 'Books by Alexis',
         description: 'Read inspirational books anywhere, anytime',
         theme_color: '#f59e0b',
         background_color: '#1f2937',
